@@ -20,3 +20,32 @@
 + 따로 구축해놓은 linux서버가 있는데 Codelgniter를 적용하려면 많은 시간이 걸릴것으로 예상된다. 한번 시도를 해봐야 되겠다. 
 + IDE를 ATOM에서 VSCODE로 갈아탐. 가볍고 좋다.
 + README.md에 대해 배웠다. 
+
+## 20171228
+
+### 진도
++ 파일　다루는　방법
++ bootstrap　사용법
+
+### 정리
++ bootstrap은　무엇인가？　반응형이며　모바일　우선인　웹　프로젝트　개발을　위한　HTML, CSS, JS 프레임워크이다．
++ 　bootstrap은　jquery기반에서　만들어진　library이기　때문에　jquery를　로드해야한다．
++ 　jquery를　load 하기위한　자비스크립트의　코드　：　<script src="~~"></script>
++ twitter bootstrap은　html코드에다가　class name만　부트스트랩에서　제시하는대로　작성만　하면　그　class에　맞게　html문서를　알아서　디자인　해주는　것이　가장　중요한　기능성이다．
++ url부분에　index.php감추는　법　： .htaccess파일을　루트　파일에　생성한　후　아래의　내용을　입력하여　저장한다．　
+------------------------- 
+dule mod_rewrite.c>
+   RewriteEngine On
+RewriteBase /
+RewriteCond $1 !^(index\.php|images|captcha|data|include|uploads|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L]
+</IfModule>
+-------------------------
+
+### 일지
++ 생활코딩에서　하는대로　따라해도　안되는　문제가　발생하여　시간을　많이　잡아먹음．
++ 대부분　개발할때　MVC패턴으로　개발한다고　함．　중요하다
++ Ubunu로　비트나미　서버를　만든　후　실행은　되지만　windows에서　그대로　파일을　옮긴터라　특정　파일　부분의　페이지가　뜨지　않음　집가서　찾아봐야될　듯　함
+

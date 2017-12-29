@@ -95,8 +95,63 @@ $route['404_override'] = 'errors/notfound';
 
 ### 진도
 + Helper
++ library
++ form 방식
++ php array
 
 ### 정리
++헬퍼란 자주 사용하는 로직을 재활용 할 수 있게 만든 일종의library다. CI에는 라이브러리라는 개념이 별도로 존재하는데 Helper와 Library의 차이점은 Helper가 객체지향이 아닌 독립된 함수라면 Library는 객체지향인 클래스이다.
+
+~~~~
+helper를 가져오고 싶으면
+$this->load->helper(‘url’); 을 사용
+여러개를 가져오고 싶다면
+$this->load->helper(array(‘url’,’HTML’);  이런 식으로 쓴다.  이렇게 하면 한번의 load로 2개의 helper를 가져올 수 있다.
+application/config/autoload.php가 있는데 
+그 안에 보면 $autoload[‘helper’] = array(); 에서 추가를 해주면  
+직접 application에서 load를 해주지 않아도(global)전역적으로 추가할 수 있다.
+
+created 컬럼의 내용출 출력하는데
+<?= $topic->created ?>
+
+
+mysql에 쿼리문을 아래와 같이 작성하면  created 컬럼의 record 내용들이 UNIX형태의 시간으로 바뀐다. 
+select UNIX_TIMESTAMP(creat  ed) from topic;
+왜 이렇게 바꾸는가? php를 이용해서 다른 포멧으로 변경하기 쉬운형태로 된 것임. 
+
+이렇게 하면 포멧에 맞게 시간이 출력이 된다. 
+<?=date('o년 n월 j일, G시 i분 s초', $topic->created)?>
+
+
+원하지 않는 방법으로 실행되지 않게 하기 위해서 (직접적으로 스크립트를 실행하지 못하게 하게 위한 구문)
+<?php if( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+kdate의 함수가 존재하는지 체크
+if( ! function_exists('kdate')){
+ function kdate($stamp){
+       return date('o년 n월 j일, G시 i분 s초', $stamp);
+   }
+
+}
+
+helper라는 것이 전역으로 사용되는 함수이기 때문에 그 전에 누군가가 미리 정의해 놓은게 있으면 에러가 발생하므로 위에 처럼 함수가 있는지 검사해야 한다.
+
+
+helpers 디렉토리에 korean_helper.php파일이 있다. 
+controllers 디렉토리에 topic.php파일에 get함수에 $this->load->helper(array('url', 'HTML', 'korean')); 라고 적혀있는데 korean이라고 적혀 있는 부분은 korean_helper.php 파일의 의 앞 문자를 구분해서 하는 것이다. 
+파일 이름 뒤에  _helper.php 는 꼭 붙여줘야 한다.  그래야 helper.php라는 것을 인식함.
+~~~~
+
++ Library는 무엇인가? 이미 Helper에서 살펴봤듯이 라이브러리는 재활용 가능성이 있는 로직을 재활용 하기 좋은 형태로 만들어둔 것이다. CI는 자주 웹개발에서 자주 사용되는 로직들을 내장(Core) 라이브러리로 제공하고 있다. 내장 라이브러리를 확장(extend)해서 필요에 따라 수정해 사용할 수 있고, 직접 라이브러리를 만들수도 있다. 
++ 객체지향이 아닌 함수로 만들어진 library가 helper고 oop방식으로 만들어진 library가 codeIgniter library다.
++ get, post로 전송받은 page는 아래의 예제처럼 받는다.
+
+~~~~
+<?php
+echo $_REQUEST['nickname'].'님의 직업은 '.$_REQUEST['job'].'이군요!';
+?>
+~~~~
+
 
 ### 일지
-
++ helper쓰는데 <?=auto_link($topic->description)?> 이것을<?=auto_link($topic->description)?>로 바꾸면링크는 뜨지만 이미지 파일이 안나온다. 이 문제를 해결해야 한다. 

@@ -12,6 +12,12 @@ class Topic_model extends CI_Model {
     //리턴되는 값이 하나이면 raw를 사용하면 됨.
   }
   public function get($topic_id){
+    $this->db->select('id'); // 이렇게 하게 되면 id이라고 가지고 있는 컬럼만 가지고 온다. 
+    $this->db->select('title');
+    $this->db->select('description');
+    //$this->db->select('created');
+    $this->db->select('UNIX_TIMESTAMP(created) AS created'); //이렇게 적으면 TIMESTAMP형식의 포멧으로 변환하고 변환된 결과는 created 의 이름으로 갖는다. 
+
     return $this->db->get_where('topic', array('id'=>$topic_id))->row(); //active record 방식으로 사용하여 이식성이 좋음.
     //return $this->db->query('SELECT * FROM topic WHERE id='.$topic.id); //문자열로 핸들링 해야되는 불편함이 있는데 위에처럼 하면 좋음
 

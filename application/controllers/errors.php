@@ -4,7 +4,7 @@ class Errors extends CI_controller {
         $this->load->view('head');
         $this->load->view('errors/404');
         $this->load->view('footer');
-        
+            
     }
 }
 ?>

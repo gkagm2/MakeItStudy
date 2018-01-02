@@ -27,12 +27,24 @@ class Topic extends CI_Controller {
     }
     function add(){
         $this->_head(); 
-        $this->load->view('add');
-        echo $this->input->post('title');
-        echo $this->input->post('description');
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('title', '제목', 'required');
+        $this->form_validation->set_rules('description', '본문', 'required');
+        
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('add');
+        } else {
+            $this->topic_model->add($this->input->post('title'), $this->input->post('description'));
+            echo '성공';
+        }        
+
+        
         $this->load->view('footer');
     }
-    function _head(){ //  _head라고 적게 되면 url routing에 대한 priavted >
+    function _head(){ //  _head라고 적게 되면 url routing에 _head라고 입력하면 private한 메소드가 된다. URL에_Head라고 접속을 해도 라우팅되지 않는다. (접속 x)
+        $this->load->config('opentutorials');
         $this->load->view('head');
         $topics = $this->topic_model->gets();
         $this->load->view('topic_list', array('topics'=>$topics));

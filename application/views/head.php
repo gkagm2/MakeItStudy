@@ -39,7 +39,18 @@
   </div>
 </div>
 
+<?php
+  if(false){
 
+  //if($this->config->item('is_dev')){
 
-    <div class="container-fluid">
+ 
+  ?>
+  <div class="well span12"> <!--class="well"은 bootstrap에서 제공하는 박스-->
+  개발환경을 수정 중입니다.
+  <?php
+}
+?>
+</div>
+    <div class="container">
         <div class="row-fluid">

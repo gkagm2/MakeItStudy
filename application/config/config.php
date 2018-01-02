@@ -223,7 +223,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4; //0이면 로그인기능을 끈다.   개발환경이면 켜놓는게 좋다. 
 
 /*
 |--------------------------------------------------------------------------

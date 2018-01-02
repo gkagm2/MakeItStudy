@@ -22,5 +22,15 @@ class Topic_model extends CI_Model {
     //return $this->db->query('SELECT * FROM topic WHERE id='.$topic.id); //문자열로 핸들링 해야되는 불편함이 있는데 위에처럼 하면 좋음
 
   }
+  function add($title, $description){
+    $this->db->set('created', 'NOW()', false);
+    $this->db->insert('topic',array(
+      'title'=>$title,
+      'description'=>$description,
+      'created'=>'now()'
+    ));
+    echo $this->db->last_query();
+    echo $title;
+  }
 }
  ?>

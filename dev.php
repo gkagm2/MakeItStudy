@@ -54,7 +54,6 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-	//서버에 CI_ENV 변수가 있다면 그 값을 setting하고 없다면 development으로 하겠다 .
 
 /*
  *---------------------------------------------------------------

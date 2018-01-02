@@ -155,3 +155,92 @@ echo $_REQUEST['nickname'].'님의 직업은 '.$_REQUEST['job'].'이군요!';
 
 ### 일지
 + helper쓰는데 <?=auto_link($topic->description)?> 이것을<?=auto_link($topic->description)?>로 바꾸면링크는 뜨지만 이미지 파일이 안나온다. 이 문제를 해결해야 한다. 
+
+## 20180102
+
+### 진도
++ 설정
++ 로그
++ 이미지 저장소 프로젝트 진행
+
+
+### 정리
++ 설정파일이란? 필요에 따라서 에플리케이션의 동작 방법을 변경하기 위해서 존재하는 것으로 Application/config/ 디렉토리 아래에 위치한다. 
++ config.php : 가장 기본적인 설정 파일로 CI가 동작하는 방식에 대한 다양한 설정 값이 저장되어 있다.
++ autoload.php : Helper, Library와 같은 리소스를 직접 로드하는 것이 아니라 자동으로 로드하게 해서 편의성을 증대시키는 설정. 하지만 불필요한 로딩으로 인해서 성능의 감소를 감수해야 한다.
++ database.php : 데이터베이스의 접속 정보와 설정에 대한 파일로 보안상 중요하다.
++ hoooks.php : CI Core를 수정하는 것은 권장되지 않는다. 새로운 버전을 적용했을 때 충돌이 일어날 가능성이 있기 때문이다. hooks은 사용자가 Core의 기본 실행 흐름에 개입할 수 있는 기회를 제공한다.
++ 소스관리
+
+~~~~
+설정 파일 중에는 외부로 유출되면 치명적인 데이터가 있다. 대표적인 것이 데이터베이스 접속 정보인데, 이러한 내용이 외부로 유출되지 않게하기 위해서는 이 파일들을 소스 관리해서는 절대로 안된다.
+
+하지만 설정 파일에 저장된 내용은 에플리케이션이 구동되기 위해서 필요한 중요 내용을 담고 있기 때문에 이 내용을 보관할 필요가 있다. 
+
+이런 이유로 필자는 application/config/template라는 폴더를 만들고 여기에 database.php나 config.php 파일을 버전관리하고, 이 중에서 보안이 요구되는 데이터는 의미 없는 데이터로 변경해서 저장한다. 새로운 환경을 셋팅 할 때는 template 내에 있는 파일을 config 디렉토리로 복사한 후에 수정한다.
+~~~~
+
++ 환경(ENVIRONMENT)
+
+~~~~
+환경은 사용자가 에플리케이션을 어떤 용도로 구동하고 있는지에 따라서 다른 설정이 적용되게 하는 편의성을 제공한다. index.php 파일 중 아래 내용을 변경한다. 이 값이 될 수 있는 것은 아래와 같다.
+
+define('ENVIRONMENT', 'development');
+
+-development : 개발 환경에서 사용한다. 모든 에러가 출력된다.
+-testing, production : 테스팅이나 실서비스 환경에서 사용된다. 에러가 출력되지 않는다.
+환경의 설정 값에 따라서 사용되는 설정값을 다르게 할 수 있다. 이 값을 development로 하고, application/config/development 디렉토리에 config.php 파일을 위치시키면 이 파일의 값이 적용된다.
+~~~~
+
++ config.php 파일 해설
+
+~~~~
+$config['language']    = 'english';
+
+언어를 설정한다.
+
+$config['enable_hooks'] = FALSE;
+
+hook 기능을 활성화 한다.
+
+$config['subclass_prefix'] = 'MY_';
+
+Core 클래스를 상속 받아서 커스터마이징 할 때 클래스 이름의 약속된 접두사를 변경한다.
+
+$config['log_threshold'] = 0;
+
+로그를 얼마나 디테일하게 출력할 것인가를 지정한다. 값이 0이면 로깅을 하지 않는다.
+
+$config['log_path'] = '';
+
+로그 파일을 저장할 위치를 지정한다.
+
+$config['cache_path'] = '';
+
+캐쉬 파일을 저장할 위치를 지정한다.
+~~~~
+
++ 설정 정보의 사용
+
+~~~~
+예를들어 language 설정을 알고 싶다면 아래와 같이 하면 된다. config 라이브러리와 config.php 파일은 자동으로 로딩되기 때문에 별도의 로드 작업을 하지 않아도 된다. 
+
+$this->config->item('base_url')
+~~~~
+
++ 사용자 정의 설정
+
+~~~~
+application/config/config.php 파일에 $config 배열에 값을 추가하거나 별도의 파일을 만들어서 설정 값을 추가 할 수 있다. 파일을 만들어서 사용할 경우 로딩 절차가 필요한데 opentutorials.php 라는 파일을 만들었다면 아래와 같이 하면 된다.
+
+$this->load->config('opentutorials');
+$this->config->item('opentutorials');
+
+item 메소드는 설정이 없다면 false를 리턴한다.
+~~~~
+
+
+### 일지
++ project를 하면서 mvc패턴에대해 더욱 정확하게 알게 되었다.
++ helper 라이브러리를 잘 이용해햐 되는것을 깨달았다.
++ 데이터베이스관련부분을 다시 공부해야 되겠다.

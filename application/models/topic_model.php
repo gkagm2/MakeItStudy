@@ -1,9 +1,9 @@
 <?php
 class Topic_model extends CI_Model {
   function __construct(){ //__construct() : 초기화를 위한 함수.
-    parent::__construct();
+    parent::__construct(); 
   }
-
+  
   public function gets(){
     //echo "Topic_model gets() function test ";
     //$this->db  약속됨

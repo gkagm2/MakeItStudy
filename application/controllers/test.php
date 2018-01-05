@@ -6,5 +6,6 @@ class Test extends CI_Controller {
         $this->load->view('testview');
         $this->load->view('footer');
     }
+
 }
 ?>

@@ -2,9 +2,9 @@
 class Topic extends CI_Controller {
     function __construct() //__construct() : 초기화를 위한 함수.
     {       
-        parent::__construct();
-        $this->load->database();
-        $this->load->model('topic_model');
+        //parent::__construct();
+        //$this->load->database();
+       // $this->load->model('topic_model');
     }
     function index(){    
         $this->_head();    

@@ -64,33 +64,12 @@ class Topic extends CI_Controller {
     }
 
     function upload_receive(){
-        echo "받았다~~";
-        // 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
-        $config['upload_path'] = '/static/user/';
-        // git,jpg,png 파일만 업로드를 허용한다.
-        $config['allowed_types'] = 'gif|jpg|png';
-        // 허용되는 파일의 최대 사이즈
-        $config['max_size'] = '2200000';
-        // 이미지인 경우 허용되는 최대 폭
-        $config['max_width']  = '9999';
-        // 이미지인 경우 허용되는 최대 높이
-        $config['max_height']  = '9999';
-        $this->load->library('upload', $config);
-        
-        //upload라고하는 파일 업로드를 처리하는 library 클래스이다. do_upload()라는 메소드를 호출 
-     
-        if ( ! $this->upload->do_upload("user_upload_file"))
-        {
-            echo $this->upload->display_errors();
-            echo "시발 왜안돼?";
-        }	
 
-		else
-		{
-			$data = array('upload_data' => $this->upload->data());
-            echo "성공";
-            echo var_dump($data);
-		}
+        $this->_head();
+        $this->load->view('file_receive');
+        
+        $this->load->view('footer');
+      
 
 
         // //upload는 파일을 업로드하는 라이브러리 클래스이다. do_upload()라는 메소드를 호출

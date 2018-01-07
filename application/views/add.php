@@ -1,3 +1,4 @@
+
 <form action="./add" method="post" class='span10'>
     <!--에러가 발생하면 어디서 발생했는지 확인할 수 있다.-->
     <?php echo validation_errors();?>

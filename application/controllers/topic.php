@@ -2,9 +2,9 @@
 class Topic extends CI_Controller {
     function __construct() //__construct() : 초기화를 위한 함수.
     {       
-        //parent::__construct();
-        //$this->load->database();
-       // $this->load->model('topic_model');
+        parent::__construct();
+        $this->load->database();
+        $this->load->model('topic_model');
     }
     function index(){    
         $this->_head();    
@@ -64,40 +64,56 @@ class Topic extends CI_Controller {
     }
 
     function upload_receive(){
+        echo "받았다~~";
         // 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
-        $config['upload_path'] = './static/user';
+        $config['upload_path'] = '/static/user/';
         // git,jpg,png 파일만 업로드를 허용한다.
         $config['allowed_types'] = 'gif|jpg|png';
         // 허용되는 파일의 최대 사이즈
-        $config['max_size'] = '100';
+        $config['max_size'] = '2200000';
         // 이미지인 경우 허용되는 최대 폭
-        $config['max_width'] = '1024';
+        $config['max_width']  = '9999';
         // 이미지인 경우 허용되는 최대 높이
-        $config['max_height'] = '768';
-
+        $config['max_height']  = '9999';
         $this->load->library('upload', $config);
-
-        //upload는 파일을 업로드하는 라이브러리 클래스이다. do_upload()라는 메소드를 호출
-        if ( ! $this->upload->do_upload("user_upload_file")) //userfile은 인자가 아무것도 없을때 나옴. 사용자가 전송한 파일이 어떤 이름의 데이터로 전송될 것인지
-		{// 실패면
-            //$error = array('error' => $this->upload->display_errors());
-
+        
+        //upload라고하는 파일 업로드를 처리하는 library 클래스이다. do_upload()라는 메소드를 호출 
+     
+        if ( ! $this->upload->do_upload("user_upload_file"))
+        {
             echo $this->upload->display_errors();
+            echo "시발 왜안돼?";
+        }	
 
-
-			//업로드 폼이라는것을 만들지 않아서 지운다. 
-			//$this->load->view('upload_form', $error);
-		}	
-		else // 참이면
+		else
 		{
-            //사용자가 업로드한 파일을 php가 받아서 그 파일을 보안 취약점이 없는지 체크한 후 위에 있는 $config설정에 문제가 없는지 체크 후 else 부분이 실행된다. 
-            //upload에 data()라는 메소드를 통해서 얻을 수 있다. 그 정보를 $data라는 변수에 담음.
 			$data = array('upload_data' => $this->upload->data());
-			
-            $this->load->view('upload_success', $data);
-            echo '성공';
-            var_dump($data);
+            echo "성공";
+            echo var_dump($data);
 		}
+
+
+        // //upload는 파일을 업로드하는 라이브러리 클래스이다. do_upload()라는 메소드를 호출
+        // if ( ! $this->upload->do_upload("user_upload_file")) //userfile은 인자가 아무것도 없을때 나옴. 사용자가 전송한 파일이 어떤 이름의 데이터로 전송될 것인지
+		// {// 실패면
+        //     //$error = array('error' => $this->upload->display_errors());
+
+        //     echo $this->upload->display_errors();
+
+
+		// 	//업로드 폼이라는것을 만들지 않아서 지운다. 
+		// 	//$this->load->view('upload_form', $error);
+		// }	
+		// else // 참이면
+		// {
+        //     //사용자가 업로드한 파일을 php가 받아서 그 파일을 보안 취약점이 없는지 체크한 후 위에 있는 $config설정에 문제가 없는지 체크 후 else 부분이 실행된다. 
+        //     //upload에 data()라는 메소드를 통해서 얻을 수 있다. 그 정보를 $data라는 변수에 담음.
+		// 	$data = array('upload_data' => $this->upload->data());
+			
+        //     $this->load->view('upload_success', $data);
+        //     echo '성공';
+        //     var_dump($data);
+		// }
     }
     
 }

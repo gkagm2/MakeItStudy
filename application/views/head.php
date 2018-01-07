@@ -30,6 +30,7 @@
       <!-- Be sure to leave the brand out there if you want it shown -->
       <a class="brand" href="/">JavaScript</a>
       <a class="brand" href="/index.php/test">Test</a>
+      <a class="brand" href="/index.php/study">Study</a>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">

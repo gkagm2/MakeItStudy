@@ -1,5 +1,6 @@
 [https://docs.google.com/document/d/1y3o6k7JBInCVA81INJBGaTjeu-R1Zu5eadaqY7ptC-k/edit](https://docs.google.com/document/d/1y3o6k7JBInCVA81INJBGaTjeu-R1Zu5eadaqY7ptC-k/edit "끄적인 문서").
 
+
 ## 20171227
 
 ### 진도
@@ -268,3 +269,54 @@ item 메소드는 설정이 없다면 false를 리턴한다.
 
 ### 일지
 + file 업로드가 되지 않는 이유를 발견 : $_FILES['user_upload_file']['tmp_name']에서 userfile이 user_upload_file로 바뀌었음. codeigniter에서파일 업로드는 왜 안되는지 원인을 찾지 못했음.  삽질 시작
+
+## 20180108
+
+### 진도
++ php 배열
++ image-server 프로젝트 
++ 가상 호스트 맛보기(소개만)
++ 프록시 맛보기(소개만)
+### 정리
+
+### 일지
++ php 배열에 관한 정확한 개념 습득함.
++ php 프로젝트시 규약이 필요하다는것을 알게 됨
++ dothome.co.kr : 무료 호스팅 워드 프로세스 사이트
++ docker가 컨테이너 기반의 오픈소스 가상화 플랫폼. 정말 좋은듯.
++ bitnami말고 따로따로 설치한 lamp에서 /var/www/html/ 파일에  mvc파일을 복사하면 이게 적용이 되나?? 집가면 실험해봐야겠음.
++ docker -> 어깨너머로 본 소스 코드. 여유있을 때 분석.
+
+~~~~
+> docker ps
+> docker duild -t file-server-ci
+> docker run -d -p 8005:80 -v $(pwd)/files:/var/www/html/files file-server-ci
+~~~~
+
+
+
+### PHP 작성 규칙
+
++ MVC에서 Model과 Controller 디렉토리에서 작성하는 파일은 첫글자 대문자로Views 디렉토리의 파일들은 첫글자 소문자로 파일을 만들기
++ 조건물 사용시 아래와 같은 형태로 작성  끝나느 블록 바로 옆에 else 붙이기
+
+~~~~
+if(){
+} else{
+}
+~~~~
+
++ 파일 이름 만들 시 단어와 단어사이 '_' 사용
+## 고려해야됨.
++ 함수 선언시 첫글자 소문자. '_' 사용
+
++ 변수 선언시 첫글자 소문자. '_' 사용하지 않고 단어 붙이기
+
++ 긴 단어를 변수로 작성해야될 시 축약가능.  축약시 부과적인 설명을 주석으로 써놓기.
+
+## 언더바로 사용할지 단어를 붙여쓸지 결정 후 수정해야 함.
++ 변수 선언시 '_'사용하지 않고 단어를 이어붙인다. 붙여진 두번째 단어부터 첫글자는 대문자로
++ 변수 선언시 '_' 사용
+
+
++ 주석 사용시 //와 /* */만 사용 #은 사용하지 않기.

@@ -8,6 +8,10 @@
 <li><a href="./study/studyphp/c8">배열의 등위 연산자</a></li><br>
 <li><a href="./study/studyphp/c9">배열의 동일 연산자</a></li><br>
 <li><a href="./study/studyphp/c10">"와 '의 차이</a></li><br>
-<li><a href="./study/studyphp/c11"></a></li><br>
+<li><a href="./study/studyphp/c11">배열의 정렬</a></li><br>
 <li><a href="./study/studyphp/c12"></a></li><br>
 <li><a href="./study/studyphp/c13"></a></li><br>
+<li><a href="./study/studyphp/c14"></a></li><br>
+<li><a href="./study/studyphp/c15"></a></li><br>
+<li><a href="./study/studyphp/c16"></a></li><br>
+<li><a href="./study/studyphp/c17"></a></li><br>

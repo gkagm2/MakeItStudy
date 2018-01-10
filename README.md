@@ -1,6 +1,6 @@
 [https://docs.google.com/document/d/1y3o6k7JBInCVA81INJBGaTjeu-R1Zu5eadaqY7ptC-k/edit](https://docs.google.com/document/d/1y3o6k7JBInCVA81INJBGaTjeu-R1Zu5eadaqY7ptC-k/edit "끄적인 문서").
 
-# 20180108 서버용으로 사용하라고 노트북 선물받음
+# 20180108 서버용으로 사용하라고 넷북 얻음!
 
 ## 20171227
 
@@ -371,15 +371,6 @@ https://www.thewordcracker.com/intermediate/duplicate-the-wordpress-site-with-du
 
 
 
-
-
-
-
-
-
-
-
-
 + 먹어본 음식
 
 ~~~~
@@ -387,3 +378,20 @@ https://www.thewordcracker.com/intermediate/duplicate-the-wordpress-site-with-du
 
 다 얻어먹는것들인데 먹을고이 엄청 많다 맛집투어하는 느낌
 ~~~~
+
+## 20180110
++ 특강 링크 : https://docs.google.com/document/d/1pEZQ8B4t8uHLANYDMbbdqu6apfy1-cmo71LETce1KFk/edit
+
+## 진도
++ goorm, slack, dothome 사이트 소개 및 설명
+
++ ---php문법---
++ get,post방식
++ 함수
++ 조건문
++ 데이터베이스 읽고 쓰기
+
+## 정리
+
+
+## 일지

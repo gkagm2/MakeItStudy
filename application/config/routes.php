@@ -53,7 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //url의 규칙을 의미함.   topic/로 하고 (:num)은 숫자를 의미함.   topic/뒤에  숫자가 온다면  topic/get/$1을 인자로 전달한다.
 //:num 부분의 값이 $1이라고하는 파라미터가 돼서 뒤에있는 $1이라는 값에 치환됨.
 //:num이 10이면  $1이 10으로 된다는 말임.
+
 $route['topic/(:num)'] = "topic/get/$1";
+
 $route['post/(:num)'] = "topic/get/$1";
 $route['topic/([a-z]+)/([a-z]+)/(\d+)'] = "$1/$2/$3";
 

@@ -379,10 +379,10 @@ https://www.thewordcracker.com/intermediate/duplicate-the-wordpress-site-with-du
 다 얻어먹는것들인데 먹을고이 엄청 많다 맛집투어하는 느낌
 ~~~~
 
-## 20180110
+## 20180110~20180112
 + 특강 링크 : https://docs.google.com/document/d/1pEZQ8B4t8uHLANYDMbbdqu6apfy1-cmo71LETce1KFk/edit
 
-## 진도
+### 진도
 + goorm, slack, dothome 사이트 소개 및 설명
 
 + ---php문법---
@@ -390,8 +390,71 @@ https://www.thewordcracker.com/intermediate/duplicate-the-wordpress-site-with-du
 + 함수
 + 조건문
 + 데이터베이스 읽고 쓰기
++ github사용법
++ 게시판 만들기
++ slack 알림메시지
 
-## 정리
+### 정리
 
 
-## 일지
+### 일지
++ php 기본 문법 및 데이터베이스의 읽고 쓰기에 대해 배움. 알차게 알려주심으로 기본기가 점점 탄탄해진다.
+
+## 20180115
+
+### 진도
++ wordpress clone 조사, wordpress waffle 사이트 분석
+
+### 정리
++ breadcrumbs : 프로그램, 문서, 웹사이트 등에서 사용자의 탐색 경로를 시각적으로 제공해 주는 그래픽 사용자 인터페이스(GUI). 사용자가 복잡하게 탐색하는 고자ㅓㅇ에서 자신의 위치를 파악할 수 있게 하고, 계층적 탐색 경로 등을 시각적으로 보여주는 등 편의를 제공한다.
++ MailChimp : 무료로 이메일을 대량으로 전송할 수 있는 세계 1위의 이메일 마케팅 서비스회사이다.
+
+~~~~
+1
+.Theme Options
+
+첫 페이지를 무엇으로 지정할지 설정할 수 있다.
+어떤 블로그를 보여줄지 설정할 수 있다.
+로고 이미지를 설정할 수 있다. (URL도 가능)
+사이트주소 왼쪽편에 나와있는 Favicon도 설정 할 수 있다.
+2.General Layout
+
+레이아웃을 설정할 수 있다.
+컨테이너, 사이드바 등등의 레이아웃을 설정한다.
+3.General Styling
+
+CSS부분을 고칠 수 있다.
+색상변경 및 스타일링을 할 수 있다.
+4.Advanced Styling
+
+각 태그들을 스타일링 할 수 있고 버튼의 크기를 조절 할 수 있다.
+5.Header
+
+헤더 타이틀과 브레드 크럼즈를 설정 할 수 있다
+헤더의 레이아웃과, 행동, 요소, 투명도, 모바일 메뉴를 성정할 수 있다.
+6.Sidebar Settings
+
+사이드바의 위치를 설정할 수 있다. (왼쪽, 오른쪽, 안보이기)
+사이드바 의 Archive page, Blog의 위치를 설정할 수 있다.
+사이드바의 색상을 변경할 수 있다.
+7. Footer
+
+Footer부분에 위젯과 소켓을 세팅할 수 있다.
+Column의 개수를 설정할 수 있다.
+Copyright을 설정할 수 있다.
+8.Blog Layout
+
+블로그 스타일링, 레이아웃설정을 할 수 있다.
+post 스타일링할 수 있다.
+블로그 포스터를 붙일 수 있다. 예를들어 (facebook link ,twitter link etc)
+9.Social profiles
+
+소셜 Icon과 Icon의 url을 설정할 수 있다.
+10.Newsletter
+~~~~
+
+newsletter 기능을 이용할 수 있다.
+
+### 일지
++ waffle clone시 메인 페이지에 왜 안뜨는지 해결못함
++ 여러 무료 clone 플러그인 설치 시 무료는 오류뜸, 유로로 해도 오류가 안 뜰지 장담못함

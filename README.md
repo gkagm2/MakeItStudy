@@ -371,13 +371,6 @@ https://www.thewordcracker.com/intermediate/duplicate-the-wordpress-site-with-du
 
 
 
-+ 먹어본 음식
-
-~~~~
-일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, etc
-
-다 얻어먹는것들인데 먹을고이 엄청 많다 맛집투어하는 느낌
-~~~~
 
 ## 20180110~20180112
 + 특강 링크 : https://docs.google.com/document/d/1pEZQ8B4t8uHLANYDMbbdqu6apfy1-cmo71LETce1KFk/edit
@@ -458,3 +451,47 @@ newsletter 기능을 이용할 수 있다.
 ### 일지
 + waffle clone시 메인 페이지에 왜 안뜨는지 해결못함
 + 여러 무료 clone 플러그인 설치 시 무료는 오류뜸, 유로로 해도 오류가 안 뜰지 장담못함
+
+## 20180116
+
+### 진도
++ 워드프레스 clone 플러그인 찾기, clone 방법 찾기
++ 에러해결
+
+### 정리
++ 워드프레스 데이터베이스 설정파일은 wp-config.php에서 수정 가능
+
+### 일지
++ 사이트를 복사하는데 수많은 오류와 왜 그런 문제가 발생되는지 여러 케이스를 고려하여 이것저것 다 시도해봄. 
+
+~~~~
+clone하는데 예상오류
+워드프레스 버전문제. - 아닌걸로 판명
+
+수많은 시행착오 및 추측과 실험
+
+1.서버에서 FTP를 이용하여 파일을 받아오는 와중에 파일이름 깨짐현상 발생
+2.서버에서 tgz tar파일로 압축 후 윈
+도우에서 압축해제 과정에서 중복된 파일이 있다고 뜸
+3.서버에서 zip으로 압축 후 FTP를 이용하여 파일을 받아옴. 압축 풀림. htdocs에 넣고 돌려보는데 Error establishing a database connection 오류 발생 -> wp-config.php파일 삭제 후 localhost시작.
+돌아가서 데이터베이스 생성 후 돌려보는데 와플화면이 떠야되는데 기본 화면이 뜸
+Error establishing a database connection 해결방법 사이트 :
+https://www.elegantthemes.com/blog/tips-tricks/how-to-fix-error-establishing-a-database-connection-in-wordpress
+
+~~~~
+
++ 오늘 docker가 꽤나 좋다는걸 다시 느낌. linux부터 시도해봐야겠음.
++ 버츄얼박스에있는 우분투에서 비트나미로 안하고 lamp로 서버를 설치 함. 하다보니 우분투 서버에서도 동작되는지 확인결과 php가 안먹힘. 고쳐봐야함
++ 현재 가지고 있는 개인 서버의 php버전이 5.몇임 php5버전 지우고 php7버전 새로 설치함. 안되길래 당황했지만 다행히도 고쳐서 웹에 php가 됨 (데이터베이스 테스트 해봐야됨)
+
+
+
+
+
++ 먹어본 음식
+
+~~~~
+일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, 짬뽕, 회전초밥 etc
+
+다 얻어먹는것들인데 먹을곳이 엄청 많다 맛집투어하는 느낌
+~~~~

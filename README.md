@@ -484,6 +484,66 @@ https://www.elegantthemes.com/blog/tips-tricks/how-to-fix-error-establishing-a-d
 + 버츄얼박스에있는 우분투에서 비트나미로 안하고 lamp로 서버를 설치 함. 하다보니 우분투 서버에서도 동작되는지 확인결과 php가 안먹힘. 고쳐봐야함
 + 현재 가지고 있는 개인 서버의 php버전이 5.몇임 php5버전 지우고 php7버전 새로 설치함. 안되길래 당황했지만 다행히도 고쳐서 웹에 php가 됨 (데이터베이스 테스트 해봐야됨)
 
+## 20180117
+
+### 일지
++ 현장실습 중간발표
+
+## 201801108
+
+### 진도
++ 워드프레스 플러그인 만들기
+
+### 정리
++ base64_encode() 함수는 주어진 데이터를 base64로 인코드한다. 이 인코딩은 메일 본문처럼 8비트를 사용할 수 없는 전송층에서 바이너리 데이터를 안전하게 전송하도록 설계되어있다.(http://php.net/manual/kr/function.base64-encode.php)
++ stripslashes() 함수는 따옴표 처리한 문자열을 푼다. (magic_quotes_sybase)가 켜져 있으면 ,백슬래시는 처리되지 않고, 이중 어퍼스트로피를 하나로 교체한다. (http://php.net/manual/kr/function.stripslashes.php)
++ plugins_url() 해당 디렉토리 아래의 특정 파일 대한 절대 URL을 검색한다.(https://codex.wordpress.org/Function_Reference/plugins_url)
++ Plugins은 워드 프레스의 기능을 확장하는 도구이다. Plugin은 카테고리 목록을 포함하며, 기타 플러그인 저장소에 대한 링크를 제공한다. 워드 프레스의 핵심인 유연성을 극대화하고 코드를 최소화하기 위해 플러그인은 사용자 정의 함수 등 각 사용자 맞춤형 요구를 받아들일 수 있는 기능을 제공한다.
++ php 에러코드를 출력하게끔 해주는 문장.(추가하면 웹사이트에 에러가 보임)
+
+~~~~
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+~~~~
+
++ 데이터베이스 root로 접근하는 방법 mysql -uroot -p11111 -hlocalhost
++ 데이터베이스 접근권한주는방법 (http://link2me.tistory.com/431)
+### 일지
++ php에서 데베 연동을 할 때 $connect = mysql_connect("localhost"."아이디"."비밀번호","메타데이터(스키마)");이  문장에 아래와 같이 오류가 뜸.
+
+~~~~
+Fatal error: Uncaught Error: Call to undefined function mysql_connect() in C:\Bitnami\wampstack-7.1.12-0\apache2\htdocs\wp-content\plugins\makeit-sms\form.php:73 Stack trace: #0 {main} thrown in C:\Bitnami\wampstack-7.1.12-0\apache2\htdocs\wp-content\plugins\makeit-sms\form.php on line 73
+
+이 문제를 해결하기위해 여러 시도를 해봄 해결이 안됨. 
+참고 사이트 : pentutorials.org/course/62/5174
+
+MySQL 트러블 슈팅
+만약 MySQL을 사용하는 과정에서 아래와 같은 에러가 난다면 MySQL 익스텐션을 활성화해야 한다. Bitnami 윈도우 버전의 경우 아래와 같이 처리했다. 다른 운영체제는 이 방법을 참고한다.
+1
+Fatal error: Call to undefined function mysql_connect() in D:\BitNami\wampstack-5.4.12-0\apache2\htdocs\mysql\process.php on line 2
+php의 디렉토리가 D:\BitNami\wampstack-5.4.21-0\php일 경우 D:\BitNami\wampstack-5.4.21-0\php\php.ini 파일을 열고 아래의 코드 앞의 ;을 제거한다.
+1
+extension=php_mysql.dll
+그리고 익스텐션의 dll 파일이 설치된 디렉토리의 기본경로를 변경해준다. 아래의 경로는 필자가 설치한 Bitnami를 기준으로 한 것이기 때문에 사용자마다 다를 수 있다. 자신의 환경에 맞게 수정해준다.
+1
+extension_dir = "D:\BitNami\wampstack-5.4.21-0\php\ext"
+~~~~
+
++ 자고일어나서 켜보니 새로운 에러가 발생
+~~~~
+Warning: Parameter 1 to wp_default_scripts() expected to be a reference, value given in C:\Bitnami\wampstack-7.1.12-0\apache2\htdocs\wp-includes\plugin.php on line 601
+
+Warning: Parameter 1 to wp_default_scripts() expected to be a reference, value given in C:\Bitnami\wampstack-7.1.12-0\apache2\htdocs\wp-includes\plugin.php on line 601
+
+아래의 사이트의 방법으로 해봤더니
+https://core.trac.wordpress.org/ticket/37772
+
+2개였던 경고창이 1개가 됨.
+버전 호환문제인가??
+~~~~
+
++ 이런 자잘한 오류로인해 시간을 소비해야 된다는게 아쉬움
+
 
 
 
@@ -491,7 +551,7 @@ https://www.elegantthemes.com/blog/tips-tricks/how-to-fix-error-establishing-a-d
 + 먹어본 음식
 
 ~~~~
-일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, 짬뽕, 회전초밥 etc
+일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, 짬뽕, 회전초밥, 고기 무한리필 etc
 
 다 얻어먹는것들인데 먹을곳이 엄청 많다 맛집투어하는 느낌
 ~~~~

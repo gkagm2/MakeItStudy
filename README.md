@@ -508,6 +508,7 @@ ini_set("display_errors", 1);
 
 + 데이터베이스 root로 접근하는 방법 mysql -uroot -p11111 -hlocalhost
 + 데이터베이스 접근권한주는방법 (http://link2me.tistory.com/431)
+
 ### 일지
 + php에서 데베 연동을 할 때 $connect = mysql_connect("localhost"."아이디"."비밀번호","메타데이터(스키마)");이  문장에 아래와 같이 오류가 뜸.
 
@@ -530,6 +531,7 @@ extension_dir = "D:\BitNami\wampstack-5.4.21-0\php\ext"
 ~~~~
 
 + 자고일어나서 켜보니 새로운 에러가 발생
+
 ~~~~
 Warning: Parameter 1 to wp_default_scripts() expected to be a reference, value given in C:\Bitnami\wampstack-7.1.12-0\apache2\htdocs\wp-includes\plugin.php on line 601
 
@@ -548,6 +550,7 @@ https://core.trac.wordpress.org/ticket/37772
 
 ### 진도
 + 워드프레스 플러그인 만들기
+
 ### 정리
 + 정리
 
@@ -573,7 +576,6 @@ http://php.net/manual/kr/function.array-key-exists.php
 
 json_decode() : JSON 인코딩 된 문자열을 가져 와서 PHP 변수로 변환합니다.
 http://php.net/manual/en/function.json-decode.php
-
 ~~~~
 
 ### 일지
@@ -611,12 +613,12 @@ http://php.net/manual/en/function.json-decode.php
 ### 진도
 + 워드프레스 플러그인 만들기
 + php언어 객체, 인스턴스 생성, 객체의 속성과 기능 사용, 클래스 상속하기
+
 ### 정리
 + 쿠키 : 
 
 ~~~~
  웹 서버에서 웹 브라우저를 통해 접속자의 하드디스크에 저장하는 정보이다. 이때 웹 브라우저는 쿠키를 건네준 사이트의 이름으로 쿠키를 하드디스크에 저장하게 된다. 쿠키가 접속자의 하드디스크에 저장되기 때문에 웹 서버가 쿠키를 원한다고 해서 마음껏 쿠키정보를 가져올 수는 없다. 단지 웹 브라우저가 건네주는 쿠키만을 받을 수 있다. 그래서 웹 브라우저가 웹 서버에 접속할 때 해당 사이트 이름으로 된 쿠키가 있는지 먼저 하드디스크에서 검색한다. 만약 있다면 쿠키를 웹 서버에 전달한다. 이러한 방식 때문에 웹 브라우저가 쿠키를 지원하지 않거나 사용자가 쿠키의 생성을 제한해 놓았다면 쿠키를 사용할 수 없다.
-
 ~~~~
 
 + 세션 : 

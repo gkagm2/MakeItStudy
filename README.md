@@ -630,7 +630,7 @@ http://php.net/manual/en/function.json-decode.php
 ### 일지
 + 워드프레스 플러그인 구조를 이해하는데 어려움. 인터넷으로도 찾아보고 미리 만들어져있는 플러그인도 뜯어봐야 되겠음
 
-## 20180124
+## 20180123
 
 ### 진도
 + verison관리
@@ -650,10 +650,248 @@ http://php.net/manual/en/function.json-decode.php
 + 버전규칙: http://seorenn.blogspot.kr/2012/02/version.html
 
 
+## 20180124
+
+### 진도
++ wordpress makeit-sms plugins 프로젝트
+
+### 정리
+
+~~~~
+워드프레스에서 지원하는 마크다운 문법
+http://blog.kalkin7.com/2014/02/05/wordpress-markdown-quick-reference-for-koreans/
+
+버전규칙
+http://seorenn.blogspot.kr/2012/02/version.html
+
+sendMessage만하면 전송되도록 만든다.
+
+input type        hidden name _token
+
+쿠키 또는 세션. 모든 폼에다가 일정한 약속의 네임을 준다.
+
+csrf
+
+sms남발우려
+
+csrf가 있는데 직
+
+세션에넣어놓고 비교하거나
+
+코드이그나이터 프레임워크가 되도 
+
+키 벨류
+form_open()  코드이그나이트 사용하면 CSRF
+
+다른 사람이  
+
+도메인이 다르면 세션이 맞을 수 없다. 서브 도메인. 크로스 사이트 정책 위반
+
+
+중간매개
+
+쿠키에다가 id password 집어넣어 
+
+블레이드 템플릿
+
+공개해서 작업한다 싶으면 CSRF사용하라
+
+
+www.ciboard.co.kr
+
+1.0 alpa tag 작동완성시켜서 dev테스트 완료되었다. 
+
+yona
+k보드  
+
+현재는 
+
+plugins 파일, README.md 파일 에 묶어서 
+
+1.0.1 메이져버전,  규칙 README.md에 적어놓기.
+
+~~~~
+
+### 일지
++ 이제 좀 이해가 되니 개발하는데 재미있다.  답답함이 조금 사라졌다.
+
+## 20180125
+
+### 진도
++ JavaScript 공부
++ gallery site 소스 분석
+
+### 정리
++ 씨아이보드 : 코드이그나이터를 기반으로 하여 웹 사이트를 구축하고 하는 사람들에게 편리한 CMS를 제공해주는 사이트다. 씨아이보드는 코드이그나이터를 기반으로 만든 CMS, 게시판 플랫폼입니다. MVC 모델로 구성된 이 CMS 는 기능별로 디렉토리가 정확히 구별되어 함수관리, 스킨관리가 용이합니다.
+
+
++ CMS : (Contents Management System)콘텐츠관리시스템. 웹사이트를 구성하고 있는 다양한 콘텐츠를 효율적으로 관리할 수 있도록 도와주는 시스템. 
+
++ JavaScript
+
+~~~~
+사용자가 어떤 버튼을 클릭했을 때 어떠한 일이 일어나도록 하고 싶으면 php, java, python을 하고 있으면 안됨. JavaScript를 해야 됨. 
+
+자바 스크립트가 유일함.
+
+탈웹브라우저? :
+
+브라우저에서 동작하는 클라이언트 사이드 ,서버쪽에서 동작하는 서버 사이드
+
+웹에서 사용하다가 웹 바깥쪽에서도 사용가능하다. 탈웹.
+대표적인 예 : google apps script이다.
+
+구글 스프레드시트->도구->스크립트 편집기->빈 프로젝트  : 코드 작성할 수 있음.
+
+function onOpen(){
+	var name = Browser.msgBox(‘Hello world’);
+}
+
+언어를 사용하는 대상 : 
+
+node.js의 wrtie(‘Hello world’);
+javacript는 alert(‘Hello world’);
+google apps script는 msgBox(‘Hello world’);
+
+할 수 있는 일이 다르다. 
+
+서버쪽 -> node.js 
+
+alert(‘  ~~’);  : 알림창을 띄운다.
+
+자바스크립트에서는 큰따옴표나 작은따옴표가 붙지 않은 숫자는 숫자로 인식한다.
+alert(1+1);
+alert(1.2 + 1.3);
+
+자바스크립트에서는 사칙연산 보다 좀 더 복잡한 연산도 지원한다. 
+Math.pow(3,2); // 9, 3의 2승
+Math.round(10.6); // 11, 10.6을 반올림
+Math.ceil(10.2); // 11, 10.2를 올림
+Math.floor(10.6); // 10, 10.6을 내림
+Math.sqrt(9); // 3, 3의 제곱근
+Math.random(); // 0부터 1.0 사이의 랜덤한 숫자
+
+자바 스크립트 문자
+alert(“coding”);
+alert(‘coding’);
+
+이런 식으로 써야 됨
+alert(“ egoing’s coding”);
+alert(‘ egoing”s coding ‘);
+alert(‘ eoging\’s coding’);
+\’ <- escape 문장 
+
+typeof() ;  : type을 알 수 있다. 
+typeof 2;  : number라고 뜸
+
+alert(‘coding’.length); : 문자 길이를 구할 때 문자 뒤에 .length를 붙인다.
+
+문자와 문자를 더할 때 alert(‘codd’ + ‘everbody’);  문자 사이에 ‘+’를 붙인다.
+
+‘==’ 동등 연산자로 좌항과 우항을 비교해서 서로 값이 같다면 true 다르다면 false가 된다.
+=가 2개임. 
+alert(1==2) //false
+alert(1==1) //true
+alert("one"=="two") //false
+alert("one"=="one") //true
+
+‘===’ 일치연산자로 좌항과 우항이 ‘정확’하게 같을 때 true 다르면 false가 된다.
+alert(1=='1'); //true
+alert(1==='1'); //false
+데이터 형도 같아야만됨
+alert(null == undefined); //true
+alert(null === undefined); //false
+alert(true == 1); //true
+alert(true === 1); //false
+alert(true == '1'); //true
+alert(true === '1'); //false
+alert(0 === -0); //true
+alert(NaN === NaN); //false
+
+NaN은 0/0과 같은 연산의 결과로 만들어지는 특수한 데이터 형인데 숫자가 아니라는 뜻
+
+!=
+'!'는 부정을 의미한다. '같다'의 부정은 '같지 않다'이다. 이것을 기호로는 '!='로 표시한다. 아래의 결과는 !=의 결과인데 ==와 정반대의 결과를 보여준다.
+
+alert(1!=2); //true
+alert(1!=1); //false
+alert("one"!="two"); //true
+alert("one"!="one"); //false
+
+'!=='는 '!='와 '=='의 관계와 같다. 정확하게 같지 않다는 의미다. 예제는 생략한다.
+
+document.write는 자바스크립트를 이용해서 웹페이지에 텍스트를 출력한다. 이것은 웹브라우저에서만 동작할 것이다. node.js 콘솔과 같은 환경에서 실습을 한다면 console.log와 같은 메소드를 대신 사용한다.
+
+배열 : 
+var member = [‘jang’,’hyeon’,’myeong’]; 으로 선언
+
+member.length 하면 배열의 개수를 구할 수 있다.
+
+
+member.push(‘f’);를 하면 member 배열 끝에 f 원소가 추가된다.
+
+member = member.concat([‘f’,’g’]);를 하면 복수의 원소를 배열에 추가한다.
+
+member.unshift(‘z’);를 하면 z의 원소가 맨	 앞에 추가된다.
+
+두번째 인덱스 뒤에 대문자 B를 넣고 싶다면 splice는 첫 번째에 해당하는 원소부터 두번째 인자에 해당하는 원소의 숫자만큼의 값을 배열로부터 제거한 후에 리턴한다. 그리고 세 번째 인자부터 전달된 인자들을 첫 버째 인자의 원소 뒤에 추가한다.
+member.splice(2,0,’B’);
+a,b,B,c,e,d가 된다.
+
+객체에는 객체를 담을수도 있고, 함수도 담을 수 있다
+
+모듈의 사용
+greeting.js 파일에
+function wecome(){
+	return “Hello world”;
+}
+
+main.html 파일에
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="greeting.js"></script>
+</head>
+<body>
+<script>
+alert(welcome());
+</script>
+</body>
+</html>
+
+
+라이브러리: 라이브러리는 모듈과 비슷한 개념이다. 모듈이 프로그램을 구성하는 작은 부품으로서의 로직을 의미한다면 라이브러리는 자주 사요되는 로직을 제사용하기 편리함
+
+
+
+exports.area = function (r) {
+   return PI * r * r;
+}
+var PI = Math.PI;
+
+
+jquery는 모든것을 $로 시작한다.
+
+
+$(‘#list li’);
+id : list 하위태그 li
+
+정규표현식 
+정규표현식은 두가지 단계로 나눠짐. 하나는 컴파일, 다른 하나는 실행이다. 
+
+~~~~
+
+### 일지
++ 씨아이보드 :  http://www.ciboard.co.kr
++ 자바스크립도 후딱 끝내서 개발할 때 몰라서 막히지 않았으면 좋겠다.
+
+
+
 + 먹어본 음식
 
 ~~~~
-일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, 짬뽕, 회전초밥, 고기 무한리필, kfc 햄버거  etc
+일본라면, 오리볶음밥, 잡채밥, 부대찌개, 제육덮밥, 피자무한리필, 햄버거, 커피겁내게 큰 싸이즈, 어떤 콩나물제육볶음같은것인데 이름이 기억이안남, 짬뽕, 회전초밥, 고기 무한리필, kfc 햄버거, 돼지찌개  etc
 
 다 얻어먹는것들인데 먹을곳이 엄청 많다 맛집투어하는 느낌
 ~~~~

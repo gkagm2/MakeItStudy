@@ -716,6 +716,7 @@ plugins 파일, README.md 파일 에 묶어서
 + 이제 좀 이해가 되니 개발하는데 재미있다.  답답함이 조금 사라졌다.
 
 ## 20180125
++ JavaScript 공부한 파일 모음 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
 
 ### 진도
 + JavaScript 공부
@@ -887,6 +888,7 @@ id : list 하위태그 li
 + 자바스크립도 후딱 끝내서 개발할 때 몰라서 막히지 않았으면 좋겠다.
 
 ## 20180126
++ JavaScript 공부한 파일 모음 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
 
 ### 진도
 + JavaScript 함수, 배열, 객체, 모듈, UI와 API 그리고 문서보는 법

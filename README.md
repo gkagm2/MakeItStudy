@@ -716,7 +716,7 @@ plugins 파일, README.md 파일 에 묶어서
 + 이제 좀 이해가 되니 개발하는데 재미있다.  답답함이 조금 사라졌다.
 
 ## 20180125
-+ JavaScript 공부한 파일 모음 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
++ JavaScript 공부한 git 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
 
 ### 진도
 + JavaScript 공부
@@ -888,7 +888,7 @@ id : list 하위태그 li
 + 자바스크립도 후딱 끝내서 개발할 때 몰라서 막히지 않았으면 좋겠다.
 
 ## 20180126
-+ JavaScript 공부한 파일 모음 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
++ JavaScript 공부한 git 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
 
 ### 진도
 + JavaScript 함수, 배열, 객체, 모듈, UI와 API 그리고 문서보는 법
@@ -936,6 +936,40 @@ http://blog.javarouka.me/2012/01/javascripts-closure.html
 + JavaScript가 생각보다 어렵다. Java나 C++의 객체지향과는 많이 다르다. 상속 관점에서도 자바 스크립에는 객체만이 유일한 생성체이다.
 
 
+## 20180129
++ JavaScript 공부한 git 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
++ NodeJs 공부한 git 사이트 **https://github.com/gkagm2/NodeJsStudy.git**
+
+### 진도
++ JavaScript prototype, 표준 내장 객체의 확장, Object
++ 서버측 JavaScript와 NodeJs의 소개
++ nodejs설치 및 실행 (windows, linux 환경)
++ 간단한 웹 애플리케이션 만들기.
+
+### 정리
++ 아래와 같은 코드를 입력하고 nodejs를 이용하여 실행시키면 1337 port로 웹 서버를 이용할 수 있다.
+
+~~~~
+const http = require('http');
+
+const hostname = 'localhost';
+const port = 1337;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+})
+~~~~
+
+### 일지
++ javascript... 코드의 느낌이 이상하다. 
++ Windows환경에서는 nodejs설치시 간단함.
++ Ubuntu에서 nodejs를 설치해봄. 버전이 낮음.  버전관리를해주는 nvm을 통하여 최신 버전을 유지할 수 있는 것 같다. 방법을 알아봐 함.
++ nodejs로 포트별로 서버를 만들 수 있다. docker도 이와같은 방법을 응용하여 만든것인가?
++ 왜 nodejs를 사용하는지 알 것 같다.
++ 위에 적혀있는 git 링크로 들어가면 볼 수 있음.
 
 
 

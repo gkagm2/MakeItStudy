@@ -971,6 +971,22 @@ http.createServer((req, res) => {
 + 왜 nodejs를 사용하는지 알 것 같다.
 + 위에 적혀있는 git 링크로 들어가면 볼 수 있음.
 
+## 20180130
++ JavaScript 공부한 git 사이트 **https://github.com/gkagm2/JavaScriptStudy.git**
++ NodeJs 공부한 git 사이트 **https://github.com/gkagm2/NodeJsStudy.git**
+
+### 진도
++ 콜백(callback)함수
++ 동기와 비동기 프로그래밍
++ Express-도입
++ Express-설치
++ Express-간단한 웹 애플리케이션 만들기
+
+### 정리
++ 위에 github 링크에 있는 사이트에 정리해놨다.
+### 일지
++ 웬만하면 다음에 찾아볼 때 바로 떠올릴 수 있을 정도로 문서를 작성하고 싶지만 시간이 상당히 오래걸림. 저울질이 중요하군..
+
 
 
 

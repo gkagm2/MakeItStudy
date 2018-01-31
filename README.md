@@ -987,7 +987,17 @@ http.createServer((req, res) => {
 ### 일지
 + 웬만하면 다음에 찾아볼 때 바로 떠올릴 수 있을 정도로 문서를 작성하고 싶지만 시간이 상당히 오래걸림. 저울질이 중요하군..
 
+## 20180131
++ https://gitlab.com/makeit-kpu/crawling-php-jang.git
 
+### 진도
++ web site crawling project 시작
+
+### 정리
++ 위에 적혀있는 git site에 가면 됨
+
+### 일지
++ 무엇을 했는지 삽질log 형식으로 기록을 남겨봄.
 
 
 

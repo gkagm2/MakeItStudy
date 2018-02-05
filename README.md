@@ -1013,6 +1013,48 @@ http.createServer((req, res) => {
 ### 일지
 + 클로링 재밌다. 잘만 다루면 재밌는 사이트 하나 만들 수 있을 듯.
 
+## 20180205
+
+### 진도
++ web site crawling project
+
+
+### 정리
++ 저작권
++ 저작권법 허용
+  + 단순 링크 - 사이트 대표 주소를 링크
+  + 직접링크 - 특정 게시물을 링크
++ 저작권법 위반
+  + 프레임 링크 - 저작물의 일부를 홈페이지에 표시
+  + 임베드 링크 - 저작물 전체를 홈페이지에 표시
+
++ 로봇 배제 표준(robots.txt)
++ 웹사이트에 로봇이 접근하는 것을 방지하기 위한 규약
++ 예제
+  + 모두 허용
+    User-agent: *
+    Allow: /
+  + 모두 차단
+    User-agent: *
+    Disallow: /
+  + 다양한 조합
+    User-agent: googlebot   : googlebot 로봇만 적용
+    Disallow: /private/   : 이 디렉토리를 접근 차단한다.
+    User-agent: googlebot-news   : googlebot-news 로봇만 적용
+    Disallow: /   : 모든 디렉토리를 접근 차단한다.
+    User-agent: *   : 모든 로봇 적용
+    Disallow: /something/   : 이 디렉토리를 접근 차단한다.
++ 실제 사이트의 robots.txt: 뿜뿌, 클리앙, SLR클럽
++ 관련 뉴스 https://byline.network/2016/02/1-64/
+
+### 일지
++ 네이버 구매평이 crawling이 안된다... 답답하다
++ 크롤링 관련되서 확실히  python이 정보가 많다.
++ 웹 크롤링 어플리케이션 만들기 링크 : https://www.inflearn.com/course/%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81web-crawling-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EB%A7%8C%EB%93%A4%EA%B8%B0/?error=login
++ 웹 크롤링 시 데이터 못 읽어오는 이유 http://hashcode.co.kr/questions/2039/beautifulsoup%EC%9C%BC%EB%A1%9C-%EC%9B%B9%ED%81%AC%EB%A1%A4%EB%A7%81-%ED%95%A0%EB%95%8C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EB%AA%BB-%EC%9D%BD%EC%96%B4%EC%98%A4%EB%8A%94%EA%B1%B4-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EA%B2%B0%ED%95%A0%EC%88%98%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94
++ 구글 크롤링 및 index 생성 https://www.google.com/intl/ko/insidesearch/howsearchworks/crawling-indexing.html
++ python 크롤링 강의 **https://nomade.kr/vod/crawling/127/**
+
 
 
 + 먹어본 음식

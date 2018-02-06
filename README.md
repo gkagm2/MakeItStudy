@@ -1064,6 +1064,18 @@ http.createServer((req, res) => {
 + 구글 크롤링 및 index 생성 https://www.google.com/intl/ko/insidesearch/howsearchworks/crawling-indexing.html
 + python 크롤링 강의 **https://nomade.kr/vod/crawling/127/**
 
+## 20180206
++ https://gitlab.com/makeit-kpu/crawling-php-jang.git
+
+### 진도
++ php crawling project - 네이버 구매평 긁어오기
++ 위의 github 링크 참고
+
+### 정리
++ 비동기적 방식으로는 구매평을 못가져온다. 동기적으로 크롤링을 해야 구매평까지 가져올 수 있다.
+
+### 일지
++ python이 crawling하기 훨씬 편하다. 문법도 간단해서 손이 덜 들어간다. 왜 python으로 server side쪽으로 다루는지 알 것 같다.
 
 
 + 먹어본 음식

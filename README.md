@@ -988,7 +988,7 @@ http.createServer((req, res) => {
 + 웬만하면 다음에 찾아볼 때 바로 떠올릴 수 있을 정도로 문서를 작성하고 싶지만 시간이 상당히 오래걸림. 저울질이 중요하군..
 
 ## 20180131
-+ https://gitlab.com/makeit-kpu/crawling-php-jang.git
++ https://github.com/gkagm2/web-crawling
 
 ### 진도
 + web site crawling project 시작
@@ -1014,7 +1014,7 @@ http.createServer((req, res) => {
 + 클로링 재밌다. 잘만 다루면 재밌는 사이트 하나 만들 수 있을 듯.
 
 ## 20180205
-+ https://gitlab.com/makeit-kpu/crawling-php-jang.git
++ https://github.com/gkagm2/web-crawling
 
 ### 진도
 + web site crawling project
@@ -1065,7 +1065,7 @@ http.createServer((req, res) => {
 + python 크롤링 강의 **https://nomade.kr/vod/crawling/127/**
 
 ## 20180206
-+ https://gitlab.com/makeit-kpu/crawling-php-jang.git
++ https://github.com/gkagm2/web-crawling
 
 ### 진도
 + php crawling project - 네이버 구매평 긁어오기
@@ -1077,6 +1077,13 @@ http.createServer((req, res) => {
 ### 일지
 + python이 crawling하기 훨씬 편하다. 문법도 간단해서 손이 덜 들어간다. 왜 python으로 server side쪽으로 다루는지 알 것 같다.
 
+##20180207
+
+### 진도
++ crawling project ( 로그인 후 보여주는 게시물 크롤링, 이미지 크롤링)
+### 정리
+
+### 일지
 
 + 먹어본 음식
 
